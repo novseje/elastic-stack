@@ -1,16 +1,13 @@
 {
   "index_patterns": ["rudderstack-*"],
-  "settings": {
-    "number_of_shards": 1,
-    "number_of_replicas": 1
-  },
   "mappings": {
     "properties": {
-      "timestamp": {
-        "type": "date"
-      },
       "message": {
         "type": "text"
+      },
+      "timestamp": {
+        "type": "date",
+        "format": "date_optional_time"
       }
     }
   }
