@@ -7,7 +7,7 @@ Copy rudderstack_template.json and run command:
 curl -X PUT -H 'Content-Type: application/json' -d @rudderstack_template.json http://localhost:9200/_template/rudderstack_template
 ```
 
-OR use Kibana Dev Tool:
+OR use Kibana Dev Tools:
 
 ```
 PUT _template/rudderstack_template
