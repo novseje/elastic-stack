@@ -113,6 +113,51 @@ sudo systemctl start filebeat
 sudo systemctl enable filebeat
 ```
 
+### 4. Configure Metricbeat:
+
+#### 4.1. Installing Metricbeat
+
+```bash
+sudo dnf install metricbeat
+```
+
+### 4.2. Enable data collection modules
+
+```bash
+sudo metricbeat modules enable system
+```
+
+### 4.3. Configure Metricbeat:
+
+Edit metricbeat.yml:
+
+```bash
+sudo vi /etc/metricbeat/metricbeat.yml
+```
+
+Uncomment `output.logstash` section and set specify the hostname and port of your remote Logstash server.:
+
+```
+output.logstash:
+  hosts: ["111.111.222.222:5044"]
+```
+
+And comment `output.elasticsearch`
+
+```
+#output.elasticsearch:
+#  hosts: ["localhost:9200"]
+```
+
+**Important!** `output.elasticsearch` and `output.logstash` cannot be active at the same time! You cannot leave `output.elasticsearch` uncommented.
+
+#### 4.4. Start and Enable Metricbeat service:
+
+```bash
+sudo systemctl start metricbeat
+sudo systemctl enable metricbeat
+```
+
 
 
 
