@@ -158,6 +158,22 @@ sudo systemctl start metricbeat
 sudo systemctl enable metricbeat
 ```
 
+### 5. Change the Hostname
+
+Run commands for setting the new hostname. Replace "MicroserviceV1" to needed.
+```bash
+sudo hostnamectl set-hostname MicroserviceV1
+sudo hostnamectl set-hostname "Microservice v1" --pretty
+```
+
+And edit values in hosts file:
+
+```bash
+sudo vi /etc/hosts
+```
+
+Reboot server.
+
 
 
 
