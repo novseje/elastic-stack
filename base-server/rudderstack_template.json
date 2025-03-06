@@ -1,0 +1,14 @@
+{
+  "index_patterns": ["rudderstack-*"],
+  "mappings": {
+    "properties": {
+      "message": {
+        "type": "text"
+      },
+      "timestamp": {
+        "type": "date",
+        "format": "date_optional_time"
+      }
+    }
+  }
+}
